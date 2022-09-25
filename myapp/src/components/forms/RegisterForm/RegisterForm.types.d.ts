@@ -5,5 +5,5 @@ export type RegisterFormProps = {
 export type RegisterFormValuesProps = {
   username: string;
   password: string;
-  confirmPassword: string;
+  passwordConfirm: string;
 };
