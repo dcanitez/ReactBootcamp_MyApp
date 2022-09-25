@@ -16,6 +16,9 @@ export const FormStyled = styled.div`
     text-decoration: underline;
     margin-left: 0.5rem;
   }
+  .conditions {
+    margin-bottom: 1rem;
+  }
   .register-link,
   .signin-link {
     display: block;
