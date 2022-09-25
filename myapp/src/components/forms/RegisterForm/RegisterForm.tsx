@@ -12,7 +12,7 @@ const RegisterForm: FC<RegisterFormProps> = (props) => {
   const [formValues, setFormValues] = useState<RegisterFormValuesProps>({
     username: "",
     password: "",
-    confirmPassword: "",
+    passwordConfirm: "",
   });
 
   const handleChange: InputProps["onChange"] = (e, val) => {
@@ -45,7 +45,7 @@ const RegisterForm: FC<RegisterFormProps> = (props) => {
         />
         <Input
           type="password"
-          value={formValues.confirmPassword}
+          value={formValues.passwordConfirm}
           placeholder="Confirm your password"
           icon="key"
           name="passwordConfirm"
