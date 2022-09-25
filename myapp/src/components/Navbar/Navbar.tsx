@@ -8,6 +8,7 @@ const Navbar: FC<any> = (props) => {
       <ul>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/login">Sign In</NavLink>
+        <NavLink to="/change-password">Change Password</NavLink>
       </ul>
     </Styled>
   );
