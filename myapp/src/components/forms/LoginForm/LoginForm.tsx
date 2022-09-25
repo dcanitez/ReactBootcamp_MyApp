@@ -1,11 +1,8 @@
 import React, { FC, useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "../Button";
-import Card from "../Card";
-import Checkbox from "../Checkbox";
-import Input from "../Input";
-import { InputProps } from "../Input/Input.types";
-import { Styled } from "./LoginForm.styled";
+import { Card, Input, Button, Checkbox } from "../../elements";
+import { InputProps } from "../../elements/Input/Input.types";
+import { FormStyled } from "../Form.styled";
 import { LoginFormProps, LoginFormValuesProps } from "./LoginForm.types";
 
 const LoginForm: FC<LoginFormProps> = (props) => {
@@ -19,8 +16,12 @@ const LoginForm: FC<LoginFormProps> = (props) => {
     setFormValues((prev) => ({ ...prev, [name]: val }));
   };
 
+  const handleSubmit = () => {
+    props.onLogin?.(formValues);
+  };
+
   return (
-    <Styled>
+    <FormStyled>
       <Card title="Login">
         <Input
           type="text"
@@ -28,7 +29,6 @@ const LoginForm: FC<LoginFormProps> = (props) => {
           placeholder="Enter your username"
           icon="person"
           value={formValues.username}
-          style={{ marginBottom: "1rem" }}
           onChange={handleChange}
         />
         <Input
@@ -37,14 +37,13 @@ const LoginForm: FC<LoginFormProps> = (props) => {
           placeholder="Enter your password"
           icon="key"
           value={formValues.password}
-          style={{ marginBottom: "1rem" }}
           onChange={handleChange}
         />
         <div className="forgot-password">
           <Checkbox label="Remember me" />
           <span className="link">Forgot password?</span>
         </div>
-        <Button>Login Now</Button>
+        <Button onClick={handleSubmit}>Login Now</Button>
         <span className="register-link">
           Don't have an account
           <Link to="/register" className="link">
@@ -52,7 +51,7 @@ const LoginForm: FC<LoginFormProps> = (props) => {
           </Link>
         </span>
       </Card>
-    </Styled>
+    </FormStyled>
   );
 };
 
