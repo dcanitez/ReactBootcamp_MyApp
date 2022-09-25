@@ -1,1 +1,4 @@
-export type NavbarProps = {};
+export type NavbarProps = {
+  isLoggedIn: boolean;
+  onLoggedOut: () => void;
+};

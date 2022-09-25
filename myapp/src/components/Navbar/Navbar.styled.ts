@@ -18,4 +18,10 @@ export const Styled = styled.nav`
       text-decoration: underline;
     }
   }
+  .logout-btn {
+    border: none;
+    outline: none;
+    background-color: inherit;
+    cursor: pointer;
+  }
 `;
