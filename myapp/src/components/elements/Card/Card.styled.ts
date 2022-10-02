@@ -9,9 +9,9 @@ export const Styled = styled.div`
   box-sizing: border-box;
   h1 {
     font-size: 1.2rem;
-    color: #515151;
+    color: #2b2d42;
     margin: 0 0 40px 0;
     padding: 0;
-    text-decoration: underline solid #5d7cc7 2px;
+    text-decoration: underline solid #b10f2e 2px;
   }
 `;

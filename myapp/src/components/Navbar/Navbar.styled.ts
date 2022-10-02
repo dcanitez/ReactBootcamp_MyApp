@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Styled = styled.nav`
-  background-color: #fff;
+  background-color: #b10f2e;
   position: fixed;
   top: 0;
   width: 100%;
@@ -11,6 +11,7 @@ export const Styled = styled.nav`
     justify-content: flex-end;
   }
   a {
+    color: #ffffff;
     margin-right: 1rem;
     text-decoration: none;
     cursor: pointer;
@@ -19,12 +20,14 @@ export const Styled = styled.nav`
     }
   }
   .logout-btn {
+    color: #ffffff;
     border: none;
     outline: none;
     background-color: inherit;
     cursor: pointer;
   }
   .welcome-span {
+    color: #ffffff;
     margin-right: 1rem;
     font-weight: bold;
   }

@@ -4,6 +4,6 @@ export const Styled = styled.div`
   margin-top: 30vh;
   text-align: center;
   h1 {
-    color: #fff;
+    color: #ef233c;
   }
 `;

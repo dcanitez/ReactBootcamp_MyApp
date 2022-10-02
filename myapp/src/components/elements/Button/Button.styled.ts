@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Styled = styled.button`
   width: 100%;
   color: #fff;
-  background-color: #4071f4;
+  background-color: #b10f2e;
   height: 2.5rem;
   outline: none;
   border: none;
@@ -12,9 +12,9 @@ export const Styled = styled.button`
   font-weight: 600;
   margin-bottom: 0.5rem;
   &:hover {
-    background-color: darkblue;
+    background-color: #ef233c;
   }
   &:active {
-    background-color: #4071f4;
+    background-color: #ef233c;
   }
 `;
