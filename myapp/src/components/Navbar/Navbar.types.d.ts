@@ -1,4 +1,4 @@
 export type NavbarProps = {
-  isLoggedIn: boolean;
-  onLoggedOut: () => void;
+  // isLoggedIn: boolean;
+  // onLoggedOut: () => void;
 };

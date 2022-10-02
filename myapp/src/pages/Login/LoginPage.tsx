@@ -1,17 +1,20 @@
 import React, { FC } from "react";
 import { LoginForm } from "../../components/forms";
 import { LoginFormProps } from "../../components/forms/LoginForm/LoginForm.types";
-import { LoginPageProps } from "./LoginPage.types";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useLoginContext } from "../../contexts/LoginContext/LoginContext";
+import { auth } from "../../services/http/endpoints/auth";
+import { LoginPageProps } from "./LoginPage.types";
+
 const LoginPage: FC<LoginPageProps> = (props) => {
   const navigate = useNavigate();
+  const { login } = useLoginContext();
 
   const handleLogin: LoginFormProps["onLogin"] = (values) => {
-    axios.post("http://localhost:80/auth/login", values).then((res) => {
-      console.log(res);
+    auth.login(values).then((res) => {
       if (res.status === 200) {
-        props.onSuccess?.(res.data.token);
+        login(res.data.token, res.data.username);
+        // props.onSuccess?.(res.data.token);
         navigate("/");
       }
     });

@@ -1,3 +1,4 @@
 export type LoginPageProps = {
-  onSuccess: (token: string) => void;
+  /**this type is not needed due to the use of context */
+  //onSuccess: (token: string) => void;
 };

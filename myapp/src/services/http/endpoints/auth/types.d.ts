@@ -3,6 +3,11 @@ export type LoginRequestPayload = {
   password: string;
 };
 
+export type LoginResponseType = {
+  token: string;
+  username: string;
+};
+
 export type RegisterRequestPayload = {
   username: string;
   password: string;
@@ -14,4 +19,11 @@ export type RegisterResponseType = {
     username: string;
     token: string;
   };
+};
+
+export type PasswordChangeRequestPayload = {
+  username: string;
+  newPassword: string;
+  newPasswordConfirm: string;
+  oldPassword: string;
 };

@@ -1,9 +1,9 @@
 import React, { FC, useState } from "react";
 import { ChangePasswordForm } from "../../components/forms";
 import { ChangePasswordFormProps } from "../../components/forms/ChangePasswordForm/ChangePassword.types";
-import axios from "axios";
 import { ChangePasswordPageProps } from "./ChangePassword.types";
 import { Styled } from "./ChangePassword.styled";
+import { auth } from "../../services/http/endpoints/auth";
 
 const ChangePassword: FC<ChangePasswordPageProps> = (props) => {
   const [isChanged, setIsChanged] = useState<boolean>(false);
@@ -12,12 +12,8 @@ const ChangePassword: FC<ChangePasswordPageProps> = (props) => {
   const handleChangePassword: ChangePasswordFormProps["onChangePassword"] = (
     values
   ) => {
-    axios
-      .post("http://localhost:80/auth/password-change", values, {
-        headers: {
-          Authorization: `Bearer ${props.token}`,
-        },
-      })
+    auth
+      .passwordChange(values)
       .then((res) => {
         setShowMessage(true);
         if (res.status === 200) {
