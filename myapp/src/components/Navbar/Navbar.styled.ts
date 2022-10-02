@@ -24,4 +24,8 @@ export const Styled = styled.nav`
     background-color: inherit;
     cursor: pointer;
   }
+  .welcome-span {
+    margin-right: 1rem;
+    font-weight: bold;
+  }
 `;

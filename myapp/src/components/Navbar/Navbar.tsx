@@ -6,7 +6,7 @@ import { useLoginContext } from "../../contexts/LoginContext/LoginContext";
 
 const Navbar: FC<NavbarProps> = (props) => {
   const navigate = useNavigate();
-  const { isLoggedIn, logout } = useLoginContext();
+  const { isLoggedIn, username, logout } = useLoginContext();
   const handleLogout = () => {
     // props.onLoggedOut?.();
     logout();
@@ -23,6 +23,10 @@ const Navbar: FC<NavbarProps> = (props) => {
           <>
             <NavLink to="/change-password">Change Password</NavLink>
             <NavLink to="/todos">Todo's</NavLink>
+            {isLoggedIn ? (
+              <span className="welcome-span">Welcome {username}!</span>
+            ) : null}
+
             <button
               onClick={handleLogout}
               className="logout-btn material-symbols-outlined"
