@@ -1,1 +1,1 @@
-import * as category from "./methods";
+export * as category from "./methods";
