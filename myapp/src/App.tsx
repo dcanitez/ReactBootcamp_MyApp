@@ -17,6 +17,7 @@ import {
   LoginProvider,
   useLoginContext,
 } from "./contexts/LoginContext/LoginContext";
+import { TodoAppProvider } from "./contexts/TodoAppContext/TodoAppContext";
 
 const NavbarContainer: FC<NavbarProps> = (props) => {
   return (
@@ -30,6 +31,7 @@ const NavbarContainer: FC<NavbarProps> = (props) => {
 const App = () => {
   const { isLoggedIn } = useLoginContext();
 
+  /**this method is used in context! */
   // const handleLogout: NavbarProps["onLoggedOut"] = () => {
   //   localStorage.removeItem("token");
   //   setToken("");
@@ -38,17 +40,19 @@ const App = () => {
 
   return (
     <LoginProvider>
-      <Router>
-        <Routes>
-          <Route element={<NavbarContainer />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/change-password" element={<ChangePassword />} />
-            {isLoggedIn ? <Route path="/todos" element={<Todo />} /> : null}
-          </Route>
-        </Routes>
-      </Router>
+      <TodoAppProvider>
+        <Router>
+          <Routes>
+            <Route element={<NavbarContainer />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/change-password" element={<ChangePassword />} />
+              {isLoggedIn ? <Route path="/todos" element={<Todo />} /> : null}
+            </Route>
+          </Routes>
+        </Router>
+      </TodoAppProvider>
     </LoginProvider>
   );
 };
